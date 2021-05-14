@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-Text parseCreator(creator) {
+String parseCreator(creator) {
   var first = "";
   var last = "";
 
@@ -12,5 +10,5 @@ Text parseCreator(creator) {
     last = creator["lastName"]!;
   }
 
-  return Text(first + " " + last + "; ");
+  return first + " " + last;
 }

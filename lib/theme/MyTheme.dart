@@ -31,9 +31,7 @@ TextTheme getMyTextTheme() => TextTheme(
     );
 
 ThemeData getMyTheme() =>ThemeData(
-  primarySwatch: Colors.red,
-  accentColor: Colors.orangeAccent,
-  brightness: Brightness.light,
+  colorScheme: ColorScheme.dark(primary:Colors.red, secondary: Colors.orangeAccent),
   fontFamily: "ubuntu", 
   textTheme: getMyTextTheme()
   );

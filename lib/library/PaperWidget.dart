@@ -9,7 +9,7 @@ import 'Author.dart';
 class PaperWidget extends StatelessWidget {
   final Paper? paper;
 
-  PaperWidget({Key? key, this.paper}):super(key: key);
+  PaperWidget({Key? key, this.paper}) : super(key: key);
 
   void _launchURLdoi() {
     launchURLdoi(paper!);
@@ -21,27 +21,26 @@ class PaperWidget extends StatelessWidget {
       child: Column(
           children: [
             ElevatedButton(
-                  child: Text(
+                child: Text(
                   paper?.title ?? "No title",
                   style: TextStyle(fontWeight: FontWeight.bold),
                   maxLines: 3,
                   softWrap: true,
                 ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                PaperPage(paper: paper!)));
-                    //Navigator.pop(context);
-                  }),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PaperPage(paper: paper!)));
+                  //Navigator.pop(context);
+                }),
             paper?.creators != null
-                ? Flex(
-                    direction: Axis.horizontal,
-                    children: paper!.creators!
-                        .map<Text>((creator) => parseCreator(creator))
-                        .toList(),
-                    mainAxisAlignment: MainAxisAlignment.center,
+                ? Text(
+                    paper!.creators!
+                        .map<String>((creator) => parseCreator(creator))
+                        .toList()
+                        .sublist(0, paper!.creators!.length > 3 ? 3: paper!.creators!.length)
+                        .join(";"),
                   )
                 : Text("..."),
             GestureDetector(

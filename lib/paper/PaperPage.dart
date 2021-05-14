@@ -19,8 +19,8 @@ class PaperPage extends StatelessWidget {
           title: Text(paper.title ?? "Paper"),
         ),
         body: Center(
-          child: SingleChildScrollView(
-            child: Card(
+            child: SingleChildScrollView(
+                child: Card(
           margin: EdgeInsets.all(10),
           child: Column(
               children: [
@@ -31,12 +31,12 @@ class PaperPage extends StatelessWidget {
                   softWrap: true,
                 ),
                 paper.creators != null
-                    ? Flex(
-                        direction: Axis.horizontal,
-                        children: paper.creators!
-                            .map<Text>((creator) => parseCreator(creator))
-                            .toList(),
-                        mainAxisAlignment: MainAxisAlignment.center,
+                    ? Text(
+                        paper.creators!
+                            .map<String>((creator) => parseCreator(creator))
+                            .toList()
+                            .sublist(0, paper.creators!.length > 10 ? 10 : paper.creators!.length)
+                            .join(";"),
                       )
                     : Text("..."),
                 GestureDetector(
