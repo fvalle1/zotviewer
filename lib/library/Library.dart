@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:zotero_app/auth/fake_authentication.dart';
+import 'package:zotero_app/auth/authentication.dart';
 import 'package:zotero_app/collections/Collection.dart';
 import 'package:zotero_app/collections/CollectionsGridView.dart';
 import 'package:zotero_app/library/PaperWidget.dart';
@@ -21,11 +21,11 @@ class _LibraryPageState extends State<LibraryPage> {
   late Future<Column> _library;
 
   Future<Column> getLibrary(http.Client client) async {
-    var clientKeys = getClientKeys();
+    var clientKeys = getClientKeys()!;
 
     final response = await client.get(
         Uri.parse(
-            "https://api.zotero.org/users/${clientKeys['userID'][0]}/collections/${widget.collection?.key}/items/top"),
+            "https://api.zotero.org/users/${clientKeys['userID'][0]}/collections/${widget.collection?.key}/items/"),
         headers: {
           "Zotero-API-Key": clientKeys['oauth_token'][0],
           'Zotero-API-Version': '3'

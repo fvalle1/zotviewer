@@ -1,16 +1,33 @@
 # zotero_app
 
-A new Flutter project.
+A new Flutter project to implement an app to interact with [Zotero](https://zotero.org).
 
-## Getting Started
+![screen](screen.png)
 
-This project is a starting point for a Flutter application.
+## Compile
 
-A few resources to get you started if this is your first Flutter project:
+Download this project then use [Flutter](https://flutter.dev) to compile and run the application.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<!-- ### Web app
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+flutter run -d web-server --web-port=5555
+```
+
+Then point a browser to [localhost:5555](http://localhost:5555) -->
+
+## API keys
+
+To debug this app add in [lib/auth/api_credentials.dart](lib/auth/api_credentials.dart) Oauth1 API credential obtained from Zotero at [https://www.zotero.org/oauth/apps](https://www.zotero.org/oauth/apps)
+
+In [authentication.dart](lib/auth/authentication.dart) change the following lines to use the correct file.
+```dart
+import 'package:zotero_app/auth/my_api_credentials.dart';
+//import 'package:zotero_app/auth/api_credentials.dart'; // uncomment this and comment the above
+```
+
+# Screenshoot
+
+![login](login.png)
+![library](library.png)
+![detail](detail.png)

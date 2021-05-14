@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:zotero_app/auth/fake_authentication.dart';
+import 'package:zotero_app/auth/authentication.dart';
 import 'package:http/http.dart' as http;
 
 import 'Collection.dart';
@@ -9,7 +9,7 @@ import 'CollectionWidget.dart';
 
 Future<List<Widget>> getCollections(http.Client client,
     {Collection? subcollection}) async {
-  var clientKeys = getClientKeys();
+  var clientKeys = getClientKeys()!;
 
   var url =
       'https://api.zotero.org/users/${clientKeys['userID'][0]}/collections';
