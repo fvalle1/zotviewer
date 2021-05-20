@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:zotero_app/library/Library.dart';
+import 'package:zotero_app/library/LibraryPage.dart';
 
 import 'Collection.dart';
 

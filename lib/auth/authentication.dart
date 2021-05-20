@@ -32,8 +32,13 @@ Future<bool> lookForCredentials() async {
   } else {
     return false;
   }
+  return false;
+}
 
-  return true;
+void clearCredentials() async {
+  user = null;
+  _getFile().then((credentialsFile) =>
+      credentialsFile.exists().then((val) => credentialsFile.delete()));
 }
 
 Map<String, dynamic>? getClientKeys() {
@@ -77,7 +82,7 @@ void authorize() async {
   }
 }
 
-void login(String verifier) async {
+Future<bool> login(String verifier) async {
   if (auth == null) auth = getAuthorization();
 
   var tokenRes = await auth!.requestTokenCredentials(credentials!, verifier);
@@ -95,4 +100,6 @@ void login(String verifier) async {
   print(user);
   var credentialsFile = await _getFile();
   await credentialsFile.writeAsString(user.toString());
+
+  return user != null;
 }

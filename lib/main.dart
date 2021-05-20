@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zotero_app/collections/CollectionsPage.dart';
 import 'package:zotero_app/auth/AuthPage.dart';
+import 'package:zotero_app/pages/InfoPage.dart';
+import 'package:zotero_app/pages/SettingsPage.dart';
 import 'package:zotero_app/theme/MyTheme.dart';
 
 import 'auth/authentication.dart';
@@ -32,6 +34,27 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late Future<bool> credetialsChecked;
+  int _selectedIndex = 0;
+
+  void _onBottomItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  Future<Widget> _getBody(int index) async {
+    switch (index) {
+      case 0:
+        await lookForCredentials();
+        return isLoggedIn() ? CollectionPage() : AuthPage();
+      case 1:
+        return SettingsPage();
+      case 2:
+        return InfoPage();
+      default:
+        return AuthPage();
+    }
+  }
 
   @override
   void initState() {
@@ -45,16 +68,35 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title ?? "ZotViewer"),
         ),
-        body: FutureBuilder<bool>(
-            future: credetialsChecked,
+        body: FutureBuilder<Widget>(
+            future: _getBody(_selectedIndex),
             builder: (context, snapshot) {
               if (snapshot.hasError) print(snapshot.error);
               if (snapshot.hasData) {
-                return isLoggedIn() ? CollectionPage() : AuthPage();
+                return snapshot.data!;
               } else {
                 return Text("Loading...",
                     style: TextStyle(fontWeight: FontWeight.bold));
               }
-            }));
+            }),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings_applications),
+              label: 'Settings',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.info),
+              label: 'Info',
+            )
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.orangeAccent[600],
+          onTap: _onBottomItemTapped,
+        ));
   }
 }
