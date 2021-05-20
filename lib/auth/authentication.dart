@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:oauth1/oauth1.dart' as oauth1;
 import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,20 +21,24 @@ Future<File> _getFile() async {
 }
 
 Future<bool> lookForCredentials() async {
-  var credentialsFile = await _getFile();
-  var exists = await credentialsFile.exists();
-  if (exists) {
-    var string = await credentialsFile.readAsString();
-    if (string.isEmpty) {
-      user = null;
+  if (!kIsWeb) {
+    var credentialsFile = await _getFile();
+    var exists = await credentialsFile.exists();
+    if (exists) {
+      var string = await credentialsFile.readAsString();
+      if (string.isEmpty) {
+        user = null;
+        return false;
+      } else
+        user = User.fromJson(jsonDecode(string));
+    } else {
       return false;
-    } else
-      user = User.fromJson(jsonDecode(string));
+    }
+
+    return true;
   } else {
     return false;
   }
-
-  return true;
 }
 
 Map<String, dynamic>? getClientKeys() {
