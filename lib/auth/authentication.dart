@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
 import 'package:oauth1/oauth1.dart' as oauth1;
 import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -21,32 +20,25 @@ Future<File> _getFile() async {
 }
 
 Future<bool> lookForCredentials() async {
-  if (!kIsWeb) {
-    var credentialsFile = await _getFile();
-    var exists = await credentialsFile.exists();
-    if (exists) {
-      var string = await credentialsFile.readAsString();
-      if (string.isEmpty) {
-        user = null;
-        return false;
-      } else
-        user = User.fromJson(jsonDecode(string));
-    } else {
+  var credentialsFile = await _getFile();
+  var exists = await credentialsFile.exists();
+  if (exists) {
+    var string = await credentialsFile.readAsString();
+    if (string.isEmpty) {
+      user = null;
       return false;
-    }
-
-    return true;
+    } else
+      user = User.fromJson(jsonDecode(string));
   } else {
     return false;
   }
+  return false;
 }
 
 void clearCredentials() async {
   user = null;
-  if (!kIsWeb) {
-    _getFile().then((credentialsFile) =>
-        credentialsFile.exists().then((val) => credentialsFile.delete()));
-  }
+  _getFile().then((credentialsFile) =>
+      credentialsFile.exists().then((val) => credentialsFile.delete()));
 }
 
 Map<String, dynamic>? getClientKeys() {
@@ -90,7 +82,7 @@ void authorize() async {
   }
 }
 
-void login(String verifier) async {
+Future<bool> login(String verifier) async {
   if (auth == null) auth = getAuthorization();
 
   var tokenRes = await auth!.requestTokenCredentials(credentials!, verifier);
@@ -108,4 +100,6 @@ void login(String verifier) async {
   print(user);
   var credentialsFile = await _getFile();
   await credentialsFile.writeAsString(user.toString());
+
+  return user != null;
 }
