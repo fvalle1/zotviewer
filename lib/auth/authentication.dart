@@ -41,6 +41,14 @@ Future<bool> lookForCredentials() async {
   }
 }
 
+void clearCredentials() async {
+  user = null;
+  if (!kIsWeb) {
+    _getFile().then((credentialsFile) =>
+        credentialsFile.exists().then((val) => credentialsFile.delete()));
+  }
+}
+
 Map<String, dynamic>? getClientKeys() {
   return user?.clientKeys();
 }
