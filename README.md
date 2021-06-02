@@ -31,3 +31,7 @@ import 'package:zotero_app/auth/my_api_credentials.dart';
 ![login](login.png)
 ![library](library.png)
 ![detail](detail.png)
+
+# Play store
+
+This app is [available on the Google Play Store](https://play.google.com/store/apps/details?id=com.fvalle.zotero_app)
