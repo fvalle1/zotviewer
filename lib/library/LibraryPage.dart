@@ -8,6 +8,9 @@ import 'package:zotero_app/library/PaperWidget.dart';
 import 'package:zotero_app/library/Paper.dart';
 import 'package:http/http.dart' as http;
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+
 class LibraryPage extends StatefulWidget {
   final Collection? collection;
 
@@ -49,7 +52,7 @@ class _LibraryPageState extends State<LibraryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.collection?.name ?? "Collection"),
+          title: Text(widget.collection?.name ?? AppLocalizations.of(context)!.collection),
         ),
         body: Center(
             child: SingleChildScrollView(

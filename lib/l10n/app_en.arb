@@ -1,0 +1,54 @@
+{
+    "collection": "Collection",
+
+    "collections": "Collections",
+    "@collections": {
+      "description": "Collection Title"
+    },
+
+    "errorNoName": "No name",
+    "@errorNoName": {
+      "description": "Error message"
+    },
+        
+    "open": "open",
+    "@open": {
+      "description": "Open Something"
+    },
+    
+    "login": "In order to login go to the following address",
+    "@login": {
+      "description": "Login button description"
+    },
+
+    "loginCopy": "Then copy here the authorisation code in the space below",
+    "@loginCopy": {
+      "description": "Copy Auth code"
+    },
+
+    "openSource": "This is an open source project",
+
+    "released": "Released under {license}",
+    "@released": {
+      "placeholders":{
+        "license": {
+          "type": "String",
+          "example": "GPL v3"
+        }
+      }
+    },
+
+    "by": "by {name}",
+    "@by": {
+      "placeholders":{
+        "name":{
+          "type": "String",
+          "example": "John Appleased"
+        }
+      }
+    },
+
+    "settings": "Settings",
+    "forgot": "Log Out",
+    "loading": "Loading..."
+}

@@ -5,6 +5,9 @@ import 'package:zotero_app/pages/InfoPage.dart';
 import 'package:zotero_app/pages/SettingsPage.dart';
 import 'package:zotero_app/theme/MyTheme.dart';
 
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'auth/authentication.dart';
 
 void main() {
@@ -17,7 +20,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Zotero Viewer',
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', ''), // English, no country code
+        Locale('it', ''), // Italian, no country code
+      ],
       theme: getMyTheme(),
+      //locale: new Locale('it', ''),
       home: MyHomePage(title: 'ZotViewer'),
     );
   }
@@ -75,19 +89,19 @@ class _MyHomePageState extends State<MyHomePage> {
               if (snapshot.hasData) {
                 return snapshot.data!;
               } else {
-                return Text("Loading...",
+                return Text(AppLocalizations.of(context)!.loading,
                     style: TextStyle(fontWeight: FontWeight.bold));
               }
             }),
         bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
+          items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings_applications),
-              label: 'Settings',
+              label: AppLocalizations.of(context)!.settings,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.info),

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zotero_app/library/LibraryPage.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'Collection.dart';
 
 class CollectionWidget extends StatelessWidget {
@@ -21,7 +23,7 @@ class CollectionWidget extends StatelessWidget {
                 softWrap: true,
               ),
               ElevatedButton(
-                  child: Text("open"),
+                  child: Text(AppLocalizations.of(context)!.open),
                   onPressed: () {
                     Navigator.push(
                         context,

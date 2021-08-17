@@ -3,6 +3,8 @@ import 'package:zotero_app/library/Author.dart';
 import 'package:zotero_app/library/Paper.dart';
 import 'package:zotero_app/paper/doi.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class PaperPage extends StatelessWidget {
   late final Paper paper;
 
@@ -25,7 +27,7 @@ class PaperPage extends StatelessWidget {
           child: Column(
               children: [
                 Text(
-                  paper.title ?? "No title",
+                  paper.title ?? AppLocalizations.of(context)!.errorNoName,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                   maxLines: 3,
                   softWrap: true,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:zotero_app/auth/authentication.dart';
 import 'package:zotero_app/main.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class AuthPage extends StatelessWidget {
         Spacer(flex: 1),
         Icon(Icons.login, size: 100),
         Spacer(flex: 1),
-        Text("In order to login go to the following address"),
+        Text(AppLocalizations.of(context)!.login),
         GestureDetector(
           onTap: authorize,
           child: FutureBuilder(
@@ -32,7 +34,7 @@ class AuthPage extends StatelessWidget {
               }),
         ),
         Spacer(flex: 1),
-        Text("Then copy here the authorisation code in the space below"),
+        Text(AppLocalizations.of(context)!.loginCopy),
         TextField(
           onSubmitted: (String token) {
             login(token).then((val) => Navigator.pushReplacement(context,
@@ -41,7 +43,7 @@ class AuthPage extends StatelessWidget {
           obscureText: false,
           decoration: InputDecoration(
             border: OutlineInputBorder(),
-            labelText: 'API access token',
+            labelText: 'Token',
           ),
         ),
         Spacer(flex: 1),

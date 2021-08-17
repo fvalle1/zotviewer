@@ -4,6 +4,8 @@ import 'package:zotero_app/library/Paper.dart';
 import 'package:zotero_app/paper/PaperPage.dart';
 import 'package:zotero_app/paper/doi.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'Author.dart';
 
 class PaperWidget extends StatelessWidget {
@@ -22,7 +24,7 @@ class PaperWidget extends StatelessWidget {
           children: [
             ElevatedButton(
                 child: Text(
-                  paper?.title ?? "No title",
+                  paper?.title ?? AppLocalizations.of(context)!.errorNoName,
                   style: TextStyle(fontWeight: FontWeight.bold),
                   maxLines: 3,
                   softWrap: true,

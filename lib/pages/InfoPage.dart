@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 // import 'package:package_info/package_info.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class InfoPage extends StatelessWidget {
   void launchGitUrl() async {
     var url = "https://bitbucket.org/fvalle01/zotviewer/src/main/";
@@ -36,11 +38,11 @@ class InfoPage extends StatelessWidget {
         //     }
         //   },
         // ),
-        Text("v 1.1.0",
+        Text("v 1.2.0",
             style: TextStyle(fontSize: 25)),
-        Text("by Filippo Valle", style: TextStyle(fontSize: 25)),
+        Text(AppLocalizations.of(context)!.by("Filippo Valle"), style: TextStyle(fontSize: 25)),
         Spacer(flex: 2),
-        Text("This is an open source project", style: TextStyle(fontSize: 20)),
+        Text(AppLocalizations.of(context)!.openSource, style: TextStyle(fontSize: 20)),
         GestureDetector(
           onTap: launchGitUrl,
           child: Text(
@@ -49,7 +51,7 @@ class InfoPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        Text("Released under GPL v3", style: TextStyle(fontSize: 18)),
+        Text(AppLocalizations.of(context)!.released("GPL v3"), style: TextStyle(fontSize: 18)),
         Spacer(flex: 1)
       ],
     )));

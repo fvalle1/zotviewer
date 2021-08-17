@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'CollectionsGridView.dart';
 
 class CollectionPage extends StatefulWidget {
@@ -21,7 +23,7 @@ class _CollectionPageState extends State<CollectionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Collections"),
+          title: Text(AppLocalizations.of(context)!.collections),
         ),
         body: Center(
             child: FutureBuilder<List<Widget>>(
