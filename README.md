@@ -2,6 +2,8 @@
 
 A new Flutter project to implement an app to interact with [Zotero](https://zotero.org).
 
+This app is [available in the play store](https://play.google.com/store/apps/details?id=com.fvalle.zotero_app)
+
 ![screen](screen.png)
 
 ## Compile
