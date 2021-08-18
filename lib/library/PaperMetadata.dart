@@ -8,18 +8,23 @@ class PaperMetadata {
   bool? isOpenAccess;
   int? citCount;
   int? influentialCitationsCount;
+  String? year;
   String? abstract;
 
   PaperMetadata(
-      {this.isOpenAccess, this.influentialCitationsCount, this.citCount,
-      this.abstract});
+      {this.isOpenAccess,
+      this.influentialCitationsCount,
+      this.citCount,
+      this.abstract,
+      this.year});
 
   factory PaperMetadata.fromJson(Map<String, dynamic> json) {
     return PaperMetadata(
         isOpenAccess: json["isOpenAccess"],
         influentialCitationsCount: json["influentialCitationCount"],
         citCount: json["numCitedBy"],
-        abstract: json["abstract"]);
+        abstract: json["abstract"],
+        year: json["year"].toString());
   }
 }
 

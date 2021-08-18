@@ -49,6 +49,7 @@ class PaperPage extends StatelessWidget {
                             .join(";"),
                       )
                     : Text("..."),
+                Text(((paper.date?.length ?? -1) > 0) ? "(${paper.date})" : "", style: TextStyle(fontSize: 20)),
                 GestureDetector(
                   onTap: _launchURLdoi,
                   child: Text(paper.doi ?? "...",
@@ -62,6 +63,10 @@ class PaperPage extends StatelessWidget {
                         return Card(
                           shadowColor: Colors.indigo,
                             child: Flex(direction: Axis.vertical, children: [
+                              ((paper.date?.length ?? -1) > 0)
+                              ? Text("")
+                              : Text((snapshot.data!.year != null) ? "(${snapshot.data!.year})" : "...",
+                                  style: TextStyle(fontSize: 20)),
                           Text(
                             (snapshot.data?.isOpenAccess ?? false
                                     ? AppLocalizations.of(context)!.itis
@@ -83,7 +88,7 @@ class PaperPage extends StatelessWidget {
                           ),
                           ((paper.abstract?.length ?? 0) > 0)
                               ? Text("")
-                              : Text(snapshot.data!.abstract ?? ("no meta abs"),
+                              : Text(snapshot.data!.abstract ?? ("..."),
                                   style: TextStyle(fontSize: 22))
                         ]));
                       } else if (snapshot.hasError) {
