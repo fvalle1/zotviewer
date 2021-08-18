@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         Locale('it', ''), // Italian, no country code
       ],
       theme: getMyTheme(),
-      //locale: new Locale('it', ''),
+      // locale: new Locale('it', ''),
       home: MyHomePage(title: 'ZotViewer'),
     );
   }
