@@ -38,11 +38,12 @@ class InfoPage extends StatelessWidget {
         //     }
         //   },
         // ),
-        Text("v 1.2.0",
+        Text("v 1.2.0", style: TextStyle(fontSize: 25)),
+        Text(AppLocalizations.of(context)!.by("Filippo Valle"),
             style: TextStyle(fontSize: 25)),
-        Text(AppLocalizations.of(context)!.by("Filippo Valle"), style: TextStyle(fontSize: 25)),
         Spacer(flex: 2),
-        Text(AppLocalizations.of(context)!.openSource, style: TextStyle(fontSize: 20)),
+        Text(AppLocalizations.of(context)!.openSource,
+            style: TextStyle(fontSize: 20)),
         GestureDetector(
           onTap: launchGitUrl,
           child: Text(
@@ -51,7 +52,8 @@ class InfoPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        Text(AppLocalizations.of(context)!.released("GPL v3"), style: TextStyle(fontSize: 18)),
+        Text(AppLocalizations.of(context)!.released("GPL v3"),
+            style: TextStyle(fontSize: 18)),
         Spacer(flex: 1)
       ],
     )));
