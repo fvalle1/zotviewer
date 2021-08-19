@@ -11,5 +11,6 @@
     "settings": "impostazioni",
     "forgot": "Log Out",
     "loading": "Caricamento...",
-    "share": "Condividi"
+    "share": "Condividi",
+    "export": "Esporta"
 }

@@ -51,5 +51,6 @@
     "settings": "Settings",
     "forgot": "Log Out",
     "loading": "Loading...",
-    "share": "Share"
+    "share": "Share",
+    "export": "Export"
 }
