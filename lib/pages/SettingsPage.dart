@@ -32,7 +32,7 @@ class SettingsPage extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ThankToPage()));
                 },
-                child: Text(AppLocalizations.of(context)!.licences,
+                child: Text("Credits",
                     style: new SettingsButtonsStyle())),
             Spacer(flex: 2),
           ],
