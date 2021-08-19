@@ -17,7 +17,7 @@ class ShareCollectionButton extends FloatingActionButton {
       : super.extended(
             onPressed: () {
               _getBib(collection, format: format).then((bibfile) {
-                Share.share(bibfile ?? "");
+              Share.share(bibfile ?? "");
               });
             },
             label: Text(label ?? "Click me"),

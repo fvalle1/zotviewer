@@ -9,7 +9,7 @@ class SharePaperButton extends FloatingActionButton {
 
   SharePaperButton({Paper? this.paper, String? this.label})
       : super.extended(
-            onPressed: () => {Share.share("${label} ${paper?.title} \n ${paper?.doi??""}", subject: "Paper")},
+            onPressed: () => {Share.share("${paper?.title} \n ${paper?.doi??""}", subject: "Paper")},
             label: Text(label?? "Click me"),
             icon: const Icon(Icons.share));
 }
