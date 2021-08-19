@@ -4,6 +4,7 @@ import 'package:zotero_app/library/Paper.dart';
 import 'package:zotero_app/paper/doi.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:zotero_app/share/SharePaperButton.dart';
 
 class PaperPage extends StatelessWidget {
   late final Paper paper;
@@ -52,6 +53,8 @@ class PaperPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min),
-        ))));
+        ))),
+        floatingActionButton: new SharePaperButton(paper: paper, label: AppLocalizations.of(context)!.share),
+        );
   }
 }

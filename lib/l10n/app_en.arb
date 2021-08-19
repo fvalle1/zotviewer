@@ -50,5 +50,6 @@
 
     "settings": "Settings",
     "forgot": "Log Out",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "share": "Share"
 }

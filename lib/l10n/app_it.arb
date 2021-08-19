@@ -10,5 +10,6 @@
     "by": "creato da {name}",
     "settings": "impostazioni",
     "forgot": "Log Out",
-    "loading": "Caricamento..."
+    "loading": "Caricamento...",
+    "share": "Condividi"
 }
