@@ -9,7 +9,7 @@ import 'package:zotero_app/library/Paper.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:zotero_app/share/ShareCollectionButton.dart';
 
 class LibraryPage extends StatefulWidget {
   final Collection? collection;
@@ -52,38 +52,41 @@ class _LibraryPageState extends State<LibraryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.collection?.name ?? AppLocalizations.of(context)!.collection),
+          title: Text(widget.collection?.name ??
+              AppLocalizations.of(context)!.collection),
         ),
         body: Center(
             child: SingleChildScrollView(
                 child: Column(children: [
-              FutureBuilder<List<Widget>>(
-                  future: getCollections(http.Client(),
-                      subcollection: widget.collection),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasError) print(snapshot.error);
-                    if (snapshot.hasData) {
-                      return Row(
-                        children: snapshot.data!,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                      );
-                    } else {
-                      return Center(child: CircularProgressIndicator());
-                    }
-                  }),
-                FutureBuilder<Column>(
-                future: _library,
-                builder: (context, snapshot) {
-                  if (snapshot.hasError) print(snapshot.error);
-                  if (snapshot.hasData) {
-                    return snapshot.data!;
-                  } else {
-                    return Center(child: CircularProgressIndicator());
-                  }
-                },
-              )
-            ]),
-            padding: EdgeInsets.only(top:10, left: 25, right: 25))
-            ));
+                  FutureBuilder<List<Widget>>(
+                      future: getCollections(http.Client(),
+                          subcollection: widget.collection),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasError) print(snapshot.error);
+                        if (snapshot.hasData) {
+                          return Row(
+                            children: snapshot.data!,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                          );
+                        } else {
+                          return Center(child: CircularProgressIndicator());
+                        }
+                      }),
+                  FutureBuilder<Column>(
+                    future: _library,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) print(snapshot.error);
+                      if (snapshot.hasData) {
+                        return snapshot.data!;
+                      } else {
+                        return Center(child: CircularProgressIndicator());
+                      }
+                    },
+                  )
+                ]),
+                padding: EdgeInsets.only(top: 10, left: 25, right: 25))),
+        floatingActionButton: new ShareCollectionButton(
+            collection: widget.collection,
+            label: AppLocalizations.of(context)!.export));
   }
 }

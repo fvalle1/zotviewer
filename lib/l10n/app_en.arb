@@ -71,6 +71,9 @@
           "type": "int"
         }
       }
-    }
+    },
 
+    "share": "Share",
+    "export": "Export",
+    "licences": "Licences"
 }
