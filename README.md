@@ -4,6 +4,8 @@ A new Flutter project to implement an app to interact with [Zotero](https://zote
 
 [![available in the play store](google-play-badge.png)](https://play.google.com/store/apps/details?id=com.fvalle.zotero_app)
 
+A [free testing version](https://play.google.com/apps/testing/com.fvalle.zotero_app) is also available.
+
 ![screen](screen.png)
 
 ## Compile

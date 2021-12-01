@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:zotero_app/library/Paper.dart';
 import 'package:zotero_app/paper/PaperPage.dart';
 import 'package:zotero_app/paper/doi.dart';
-
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import 'Author.dart';
+import 'AuthorHelper.dart';
 
 class PaperWidget extends StatelessWidget {
   final Paper? paper;
