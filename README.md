@@ -3,6 +3,7 @@
 A new Flutter project to implement an app to interact with [Zotero](https://zotero.org).
 
 [![available in the play store](google-play-badge.png)](https://play.google.com/store/apps/details?id=com.fvalle.zotero_app)
+[![available in snapcraft](snap-store-black.png)](https://snapcraft.io/zotviewer/)
 
 A [free testing version](https://play.google.com/apps/testing/com.fvalle.zotero_app) is also available.
 
