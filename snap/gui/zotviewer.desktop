@@ -1,8 +1,7 @@
 [Desktop Entry]
-  Name=zotviewer
-  Comment=App to visualize Zotero Bibliography
-  Exec=zotviewer 
-  Icon=${SNAP}/meta/gui/zotviewer.png # replace name to your app name
-  Terminal=false
-  Type=Application
-  Categories=Productivity; #adjust accordingly your snap category
+Name=zotviewer
+Exec=zotviewer 
+Icon=${SNAP}/meta/gui/zotviewer.png
+Terminal=false
+Type=Application
+Categories=Productivity;

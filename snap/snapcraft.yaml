@@ -8,15 +8,15 @@ base: core18
 grade: stable
 
 slots:
-  dbus-zotviewer: # adjust accordingly to your app name
+  dbus-zotviewer:
     interface: dbus
     bus: session
-    name: com.fvalle1.zotviewer # adjust accordingly to your app name and
+    name: com.fvalle1.zotviewer
     
 apps:
   zotviewer:
     command: zotviewer
-    extensions: [flutter-dev] # Where "master" defines which Flutter channel to use for the build
+    extensions: [flutter-dev]
     plugs:
     - network
     slots:
@@ -25,4 +25,4 @@ parts:
   zotviewer:
     source: .
     plugin: flutter
-    flutter-target: lib/main.dart # The main entry-point file of the application
+    flutter-target: lib/main.dart
