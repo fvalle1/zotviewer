@@ -1,0 +1,28 @@
+name: zotviewer
+version: 1.4.0
+summary: Zotero Visualizer
+description: Your bibliography in your hands
+
+confinement: strict
+base: core18
+grade: stable
+
+slots:
+  dbus-zotviewer:
+    interface: dbus
+    bus: session
+    name: com.fvalle1.zotviewer
+    
+apps:
+  zotviewer:
+    command: zotviewer
+    extensions: [flutter-dev]
+    plugs:
+    - network
+    slots:
+      - dbus-zotviewer
+parts:
+  zotviewer:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart
