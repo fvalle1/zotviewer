@@ -33,7 +33,7 @@ Future<PaperMetadata?> getMetadataOfPaper(Paper? paper) async {
 
   if (paper.doi != null) {
     var response = await http.get(Uri.parse(
-        "https://api.semanticscholar.org/v1/paper/DOI:" + paper.doi!));
+        "https://api.semanticscholar.org/graph/v1/paper/DOI:" + paper.doi! + "?fields=abstract,tldr,authors,citationCount,influentialCitationCount,year"));
     if (response.statusCode == 200) {
       return PaperMetadata.fromJson(jsonDecode(response.body));
     } else {
