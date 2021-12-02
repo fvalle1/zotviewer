@@ -17,6 +17,8 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '2.0.5'
+    - run: flutter channel dev
+    - run: flutter upgrade
     - run: flutter pub get
-    - run: flutter build apk --debug --no-sound-null-safety
-    - run: flutter build ios --debug --no-codesign --no-sound-null-safety
+    - run: flutter build apk --debug
+    - run: flutter build ios --debug --no-codesign
