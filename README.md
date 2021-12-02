@@ -1,3 +1,4 @@
+[![zotviewer](https://snapcraft.io/zotviewer/badge.svg)](https://snapcraft.io/zotviewer)
 # zotero_app
 
 A new Flutter project to implement an app to interact with [Zotero](https://zotero.org).
