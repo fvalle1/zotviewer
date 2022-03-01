@@ -20,4 +20,4 @@ jobs:
     - run: flutter channel dev
     - run: flutter upgrade
     - run: flutter pub get
-    - run: flutter build web --no-sound-null-safety
+    - run: flutter build web
