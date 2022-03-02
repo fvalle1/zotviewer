@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 // import 'package:package_info/package_info.dart';
@@ -38,7 +37,7 @@ class InfoPage extends StatelessWidget {
         //     }
         //   },
         // ),
-        Text("v 1.4.0", style: TextStyle(fontSize: 25)),
+        Text("v 1.4.1", style: TextStyle(fontSize: 25)),
         Text(AppLocalizations.of(context)!.by("Filippo Valle"),
             style: TextStyle(fontSize: 25)),
         Spacer(flex: 2),
