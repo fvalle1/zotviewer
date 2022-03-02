@@ -1,0 +1,23 @@
+name: Dart Build web
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install dependencies
+      uses: actions/checkout@v2
+    - uses: subosito/flutter-action@v1
+      with:
+        flutter-version: '2.x'
+    - run: flutter channel dev
+    - run: flutter upgrade
+    - run: flutter pub get
+    - run: flutter build web

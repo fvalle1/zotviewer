@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zotero_app/auth/authentication.dart';
 // import 'package:package_info/package_info.dart';

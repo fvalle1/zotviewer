@@ -1,3 +1,7 @@
+[![zotviewer](https://snapcraft.io/zotviewer/badge.svg)](https://snapcraft.io/zotviewer)
+[![Dart CI](https://github.com/fvalle1/zotviewer/actions/workflows/dart.yml/badge.svg)](https://github.com/fvalle1/zotviewer/actions/workflows/dart.yml)
+[![Dart Build web](https://github.com/fvalle1/zotviewer/actions/workflows/dart_web.yml/badge.svg)](https://github.com/fvalle1/zotviewer/actions/workflows/dart_web.yml)
+
 # zotero_app
 
 A new Flutter project to implement an app to interact with [Zotero](https://zotero.org).
