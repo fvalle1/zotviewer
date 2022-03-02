@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zotero_app/library/Paper.dart';
 import 'package:zotero_app/paper/PaperPage.dart';
