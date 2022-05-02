@@ -33,11 +33,11 @@ class _CollectionPageState extends State<CollectionPage> {
             if (snapshot.hasData) {
               return GridView.count(
                   primary: false,
-                  padding:
-                      const EdgeInsets.only(top: 10, left: 25, right: 25),
+                  padding: const EdgeInsets.only(top: 10, left: 25, right: 25),
                   crossAxisSpacing: 15,
                   mainAxisSpacing: 10,
-                  crossAxisCount: 2,
+                  crossAxisCount:
+                      (MediaQuery.of(context).size.width ~/ 200).toInt(),
                   children: snapshot.data!);
             } else {
               return Center(child: CircularProgressIndicator());
