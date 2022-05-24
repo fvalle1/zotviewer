@@ -13,7 +13,7 @@
     "loading": "Caricamento...",
     "itis": "È",
     "itisnot": "Non è",
-    "nCit": "{count,plural, =0{nessuna citazionee} =1 {una citazione} other{{count} citazioni}}",
+    "nCit": "{count,plural, =0{nessuna citazione} =1 {una citazione} other{{count} citazioni}}",
     "nInfluentialCit": "{count,plural, =0{nessuna citazione influente} =1{una citazione influente} other{{count} citazioni influenti}}",
     "influential": "influenti",
     "share": "Condividi",
