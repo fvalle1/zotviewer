@@ -36,7 +36,7 @@ dependencies:
   path_provider: ^2.0.7
   http: ^0.13.4
   url_launcher: ^6.0.17
-  google_fonts: ^2.1.0
+  google_fonts: ^3.0.1
   intl: ^0.17.0
   # package_info: ^0.4.0+16
   share_plus: ^4.0.3
