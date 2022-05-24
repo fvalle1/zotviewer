@@ -76,9 +76,8 @@ Future<Uri> getAuthUrl() async {
 
 void authorize() async {
   var authorizationUrl = await getAuthUrl();
-  if (await canLaunch(authorizationUrl.toString())) {
-    await launch(authorizationUrl.toString(),
-        forceSafariVC: true, forceWebView: true);
+  if (await canLaunchUrl(authorizationUrl)) {
+    await launchUrl(authorizationUrl);
   }
 }
 

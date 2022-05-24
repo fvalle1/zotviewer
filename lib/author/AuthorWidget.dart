@@ -14,10 +14,10 @@ class AuthorWidget extends StatelessWidget {
     //var url = author?.url;
     //if (url == null) return;
 
-    var url = "https://scholar.google.com/scholar?q=" +
-        (author?.name?.replaceAll(" ", "%20") ?? "");
-    if (await canLaunch(url)) {
-      await launch(url);
+    var url = Uri.parse("https://scholar.google.com/scholar?q=" +
+        (author?.name?.replaceAll(" ", "%20") ?? ""));
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
     } else {
       throw 'Could not launch $url';
     }

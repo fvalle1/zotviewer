@@ -6,9 +6,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class InfoPage extends StatelessWidget {
   void launchGitUrl() async {
-    var url = "https://bitbucket.org/fvalle01/zotviewer/src/main/";
-    if (await canLaunch(url)) {
-      await launch(url, forceSafariVC: true, forceWebView: true);
+    var url = Uri.parse("https://bitbucket.org/fvalle01/zotviewer/src/main/");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
     }
   }
 
