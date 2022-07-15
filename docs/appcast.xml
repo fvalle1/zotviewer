@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="https://zotviewer.site/appcast.xml">
+    <channel>
+        <title>Covid Stats - Appcast</title>
+        <item>
+            <title>Version 5.0.0</title>
+            <description>Introduce Cupertino style</description>
+            <pubDate>Mon, 2 May 2022 18:23:02 +0100</pubDate>
+            <enclosure url="https://static.codemagic.io/files/41678e89-1372-48b2-8aed-860d06b09059/824a1341-5313-4733-a7ed-5cbbfa4e1173/app-release-universal.apk" 
+sparkle:version="4.1.4" sparkle:os="android" />
+        </item>
+    </channel>
+</rss>
