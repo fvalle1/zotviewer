@@ -3,11 +3,11 @@
     <channel>
         <title>Covid Stats - Appcast</title>
         <item>
-            <title>Version 5.0.0</title>
-            <description>Introduce Cupertino style</description>
+            <title>Version 6.0.0</title>
+            <description>Avoid Nimbella</description>
             <pubDate>Mon, 2 May 2022 18:23:02 +0100</pubDate>
-            <enclosure url="https://static.codemagic.io/files/41678e89-1372-48b2-8aed-860d06b09059/824a1341-5313-4733-a7ed-5cbbfa4e1173/app-release-universal.apk" 
-sparkle:version="4.1.4" sparkle:os="android" />
+            <enclosure url="https://static.codemagic.io/files/cf5095d7-41c5-4739-86ed-7cf9afd892d0/5dfc7ed6-0ba0-4b5a-bcca-46bbf456552f/app-release-universal.apk" 
+sparkle:version="6.0.0" sparkle:os="android" />
         </item>
     </channel>
 </rss>
