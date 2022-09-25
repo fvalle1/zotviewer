@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="https://zotviewer.site/appcast.xml">
+    <channel>
+        <title>Covid Stats - Appcast</title>
+        <item>
+            <title>Version 6.0.0</title>
+            <description>Avoid Nimbella</description>
+            <pubDate>Mon, 2 May 2022 18:23:02 +0100</pubDate>
+            <enclosure url="https://static.codemagic.io/files/cf5095d7-41c5-4739-86ed-7cf9afd892d0/5dfc7ed6-0ba0-4b5a-bcca-46bbf456552f/app-release-universal.apk" 
+sparkle:version="6.0.0" sparkle:os="android" />
+        </item>
+    </channel>
+</rss>
