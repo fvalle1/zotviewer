@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:zotero_app/author/AuthorsPage.dart';
 
 class AuthorsButton extends StatelessWidget {
-  final List<String?>? Ids;
+  final List<String?>? ids;
 
-  AuthorsButton({Key? key, required List<String?>? this.Ids}) : super(key: key);
+  AuthorsButton({Key? key, required this.ids}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class AuthorsButton extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => AuthorsPage(
-              authorIds: Ids,
+              authorIds: ids,
             ),
           ),
         );

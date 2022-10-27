@@ -11,9 +11,9 @@ class ShareCollectionButton extends FloatingActionButton {
   final String format;
 
   ShareCollectionButton(
-      {Collection? this.collection,
-      String? this.label,
-      String this.format = "bibtex"})
+      {this.collection,
+      this.label,
+      this.format = "bibtex"})
       : super.extended(
             onPressed: () {
               _getBib(collection, format: format).then((bibfile) {

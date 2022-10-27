@@ -96,7 +96,7 @@ class PaperPage extends StatelessWidget {
                                 ? Text("")
                                 : Text(snapshot.data!.abstract ?? ("..."),
                                     style: TextStyle(fontSize: 22)),
-                            AuthorsButton(Ids: snapshot.data?.authors),
+                            AuthorsButton(ids: snapshot.data?.authors),
                             Text(
                               snapshot.data?.tldr ?? "",
                               style: TextStyle(

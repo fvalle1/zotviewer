@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:zotero_app/thankto/UrlText.dart';
 
@@ -9,11 +11,11 @@ class Source {
   Uri? licenseUrl;
 
   Source(
-      {String? this.name,
-      Uri? this.GitHubUrl,
-      Uri? this.url,
-      Uri? this.licenseUrl,
-      String? this.license});
+      {this.name,
+      this.GitHubUrl,
+      this.url,
+      this.licenseUrl,
+      this.license});
 
   toWidget() {
     return Card(
