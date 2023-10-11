@@ -39,10 +39,11 @@ Future<PaperMetadata?> getMetadataOfPaper(Paper? paper) async {
   if (paper == null) return null;
 
   if (paper.doi != null) {
-    var response = await http.get(Uri.parse(
-        "https://api.semanticscholar.org/graph/v1/paper/DOI:" +
+    var response = await http.get(
+        Uri.parse("https://api.semanticscholar.org/graph/v1/paper/DOI:" +
             paper.doi! +
-            "?fields=abstract,tldr,authors,citationCount,influentialCitationCount,year"));
+            "?fields=abstract,tldr,authors,citationCount,influentialCitationCount,year"),
+        headers: {"x-api-key": "uX6gehXukZ6hMnBvqGonn9V4zCealjjq49tB3RIv"});
     if (response.statusCode == 200) {
       return PaperMetadata.fromJson(jsonDecode(response.body));
     } else {

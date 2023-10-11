@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
       theme: getMyTheme(),
       // locale: new Locale('it', ''),
       home: MyHomePage(title: 'ZotViewer'),
+      initialRoute: "/",
     );
   }
 }
