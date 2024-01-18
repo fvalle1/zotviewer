@@ -4,7 +4,7 @@ summary: Zotero Visualizer
 description: Your bibliography in your hands
 
 confinement: strict
-base: core18
+base: core22
 grade: stable
 
 slots:
