@@ -22,17 +22,18 @@ class SettingsPage extends StatelessWidget {
           children: [
             Spacer(flex: 1),
             ElevatedButton(
-              onPressed: clearCredentials,
-              child: Text(AppLocalizations.of(context)!.forgot,
-                  style: new SettingsButtonsStyle()),
-            ),
-            ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ThankToPage()));
                 },
                 child: Text("Credits",
                     style: new SettingsButtonsStyle())),
+            Spacer(flex: 1),
+            ElevatedButton(
+              onPressed: clearCredentials,
+              child: Text(AppLocalizations.of(context)!.forgot,
+                  style: new SettingsButtonsStyle()),
+            ),
             Spacer(flex: 2),
           ],
         )));

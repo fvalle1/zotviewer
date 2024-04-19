@@ -5,8 +5,8 @@ import 'package:oauth1/oauth1.dart' as oauth1;
 import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:zotero_app/auth/user.dart';
-// import 'package:zotero_app/auth/my_api_credentials.dart';
-import 'package:zotero_app/auth/api_credentials.dart'; // uncomment this and comment the above
+import 'package:zotero_app/auth/my_api_credentials.dart';
+// import 'package:zotero_app/auth/api_credentials.dart'; // uncomment this and comment the above
 
 oauth1.Authorization? auth;
 oauth1.Credentials? credentials;
