@@ -3,7 +3,7 @@ import 'package:zotero_app/library/Paper.dart';
 
 launchURLdoi(Paper paper) async {
   String doi = paper.doi ?? "/";
-  var url = Uri.parse("https://www.doi.org/" + doi);
+  var url = Uri.parse("https://doi.org/" + doi);
   if (await canLaunchUrl(url)) {
     await launchUrl(url);
   } else {
