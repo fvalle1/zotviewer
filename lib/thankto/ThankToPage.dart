@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zotero_app/thankto/FlutterSource.dart';
 import 'package:zotero_app/thankto/Source.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../l10n/app_localizations.dart';
 
 
 class ThankToPage extends StatelessWidget {

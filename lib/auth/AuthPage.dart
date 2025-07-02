@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zotero_app/auth/authentication.dart';
 import 'package:zotero_app/main.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../l10n/app_localizations.dart';
 
 class AuthPage extends StatelessWidget {
   @override

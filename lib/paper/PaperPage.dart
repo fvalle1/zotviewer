@@ -5,7 +5,7 @@ import 'package:zotero_app/library/Paper.dart';
 import 'package:zotero_app/library/PaperMetadata.dart';
 import 'package:zotero_app/paper/doi.dart';
 import 'package:zotero_app/share/SharePaperButton.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../l10n/app_localizations.dart';
 
 class PaperPage extends StatelessWidget {
   late final Paper paper;

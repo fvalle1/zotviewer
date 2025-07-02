@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zotero_app/auth/authentication.dart';
 // import 'package:package_info/package_info.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../l10n/app_localizations.dart';
 import 'package:zotero_app/thankto/ThankToPage.dart';
 
 class SettingsButtonsStyle extends TextStyle {
