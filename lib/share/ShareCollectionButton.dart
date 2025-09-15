@@ -3,6 +3,7 @@ import 'package:zotero_app/collections/Collection.dart';
 import 'package:zotero_app/auth/authentication.dart';
 import 'package:http/http.dart' as http;
 
+
 import 'package:share_plus/share_plus.dart';
 
 class ShareCollectionButton extends FloatingActionButton {

@@ -6,6 +6,8 @@ import 'package:zotero_app/library/PaperMetadata.dart';
 import 'package:zotero_app/paper/doi.dart';
 import 'package:zotero_app/share/SharePaperButton.dart';
 import '../l10n/app_localizations.dart';
+import 'package:liquid_glass_ui_design/liquid_glass_ui.dart';
+
 
 class PaperPage extends StatelessWidget {
   late final Paper paper;
@@ -25,7 +27,7 @@ class PaperPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(paper.title ?? "Paper"),
       ),
-      body: Center(
+      body: LiquidContainer(
           child: SingleChildScrollView(
               child: Card(
         margin: EdgeInsets.all(10),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:liquid_glass_ui_design/liquid_glass_ui.dart';
 import 'package:zotero_app/auth/authentication.dart';
 // import 'package:package_info/package_info.dart';
 
@@ -18,24 +19,23 @@ class SettingsPage extends StatelessWidget {
         ),
         body: Center(
             child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Spacer(flex: 1),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ThankToPage()));
-                },
-                child: Text("Credits",
-                    style: new SettingsButtonsStyle())),
-            Spacer(flex: 1),
-            ElevatedButton(
-              onPressed: clearCredentials,
-              child: Text(AppLocalizations.of(context)!.forgot,
-                  style: new SettingsButtonsStyle()),
-            ),
-            Spacer(flex: 2),
-          ],
-        )));
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Spacer(flex: 1),
+        LiquidButton(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ThankToPage()));
+            },
+            child: Text("Credits", style: new SettingsButtonsStyle())),
+        Spacer(flex: 1),
+        LiquidButton(
+          onTap: clearCredentials,
+          child: Text(AppLocalizations.of(context)!.forgot,
+              style: new SettingsButtonsStyle()),
+        ),
+        Spacer(flex: 2),
+      ],
+    )));
   }
 }

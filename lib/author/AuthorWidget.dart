@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:zotero_app/author/Author.dart';
+import 'package:liquid_glass_ui_design/liquid_glass_ui.dart';
+
 
 class AuthorWidget extends StatelessWidget {
   final String? authorId;
@@ -28,7 +30,7 @@ class AuthorWidget extends StatelessWidget {
     if (authorId == null)
       return Container();
     else
-      return Container(
+      return LiquidContainer(
         padding: EdgeInsets.all(10),
         child: FutureBuilder<Author?>(
             future: author,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zotero_app/library/LibraryPage.dart';
+import 'package:liquid_glass_ui_design/liquid_glass_ui.dart';
 
 import '../l10n/app_localizations.dart';
 
@@ -12,7 +13,7 @@ class CollectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return LiquidContainer(
       child:Column(
                 children: [
               Text(
@@ -21,9 +22,9 @@ class CollectionWidget extends StatelessWidget {
                 maxLines: 3,
                 softWrap: true,
               ),
-              ElevatedButton(
+              LiquidButton(
                   child: Text(AppLocalizations.of(context)!.open),
-                  onPressed: () {
+                  onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -36,6 +37,7 @@ class CollectionWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max),
                 padding: const EdgeInsets.all(2),
-                decoration: BoxDecoration(border: Border.all(color: Colors.orange)));
+                color: Colors.orange
+                );
   }
 }

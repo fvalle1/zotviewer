@@ -37,7 +37,7 @@ class InfoPage extends StatelessWidget {
         //     }
         //   },
         // ),
-        Text("v 2.2.4", style: TextStyle(fontSize: 25)),
+        Text("v 3.0.0", style: TextStyle(fontSize: 25)),
         Text(AppLocalizations.of(context)!.by("Filippo Valle"),
             style: TextStyle(fontSize: 25)),
         Spacer(flex: 2),

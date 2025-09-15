@@ -4,6 +4,8 @@ import 'package:zotero_app/paper/PaperPage.dart';
 import 'package:zotero_app/paper/doi.dart';
 import '../l10n/app_localizations.dart';
 import 'AuthorHelper.dart';
+import 'package:liquid_glass_ui_design/liquid_glass_ui.dart';
+
 
 class PaperWidget extends StatelessWidget {
   final Paper? paper;
@@ -16,7 +18,7 @@ class PaperWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return LiquidCard(
       child: Column(
           children: [
             ElevatedButton(
