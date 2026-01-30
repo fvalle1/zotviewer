@@ -19,23 +19,42 @@ class SettingsPage extends StatelessWidget {
         ),
         body: Center(
             child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Spacer(flex: 1),
-        LiquidButton(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ThankToPage()));
-            },
-            child: Text("Credits", style: new SettingsButtonsStyle())),
-        Spacer(flex: 1),
-        LiquidButton(
-          onTap: clearCredentials,
-          child: Text(AppLocalizations.of(context)!.forgot,
-              style: new SettingsButtonsStyle()),
-        ),
-        Spacer(flex: 2),
-      ],
-    )));
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Spacer(flex: 1),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.8,
+              child: LiquidButton(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ThankToPage()));
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    child: Center(
+                      child: Text("Credits",
+                          style: new SettingsButtonsStyle(),
+                          textAlign: TextAlign.center),
+                    ),
+                  )),
+            ),
+            Spacer(flex: 1),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.8,
+              child: LiquidButton(
+                onTap: clearCredentials,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  child: Center(
+                    child: Text(AppLocalizations.of(context)!.forgot,
+                        style: new SettingsButtonsStyle(),
+                        textAlign: TextAlign.center),
+                  ),
+                ),
+              ),
+            ),
+            Spacer(flex: 2),
+          ],
+        )));
   }
 }
