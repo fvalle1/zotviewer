@@ -43,7 +43,7 @@ Future<PaperMetadata?> getMetadataOfPaper(Paper? paper) async {
         Uri.parse("https://api.semanticscholar.org/graph/v1/paper/DOI:" +
             paper.doi! +
             "?fields=abstract,tldr,authors,citationCount,influentialCitationCount,year"),
-        headers: {"x-api-key": "uX6gehXukZ6hMnBvqGonn9V4zCealjjq49tB3RIv"});
+        headers: {"x-api-key": "NHhGvHgnj6fdp4JMKvT44Qs0PobfrdFWfiglcT70"});
     if (response.statusCode == 200) {
       return PaperMetadata.fromJson(jsonDecode(response.body));
     } else {

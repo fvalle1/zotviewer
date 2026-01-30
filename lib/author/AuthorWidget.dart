@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:zotero_app/author/Author.dart';
 import 'package:liquid_glass_ui_design/liquid_glass_ui.dart';
 
-
 class AuthorWidget extends StatelessWidget {
   final String? authorId;
   late final Future<Author?> author;
@@ -38,19 +37,26 @@ class AuthorWidget extends StatelessWidget {
               if (snapshot.hasData) {
                 return GestureDetector(
                     onTap: () => _launchAuthorPage(snapshot.data),
-                    child: Column(children: <Widget>[
-                      Text(snapshot.data?.name ?? "",
-                          style: TextStyle(fontSize: 24)),
-                      (snapshot.data?.hindex != null)
-                          ? Text("h-index: ${snapshot.data?.hindex}",
-                              style: TextStyle(fontSize: 20))
-                          : Container(),
-                      (snapshot.data?.nPubblication != null)
-                          ? Text(
-                              "Number of publication: ${snapshot.data?.nPubblication}",
-                              style: TextStyle(fontSize: 20))
-                          : Container(),
-                    ]));
+                    child: SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(snapshot.data?.name ?? "",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 24)),
+                              (snapshot.data?.hindex != null)
+                                  ? Text("h-index: ${snapshot.data?.hindex}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(fontSize: 20))
+                                  : Container(),
+                              (snapshot.data?.nPubblication != null)
+                                  ? Text(
+                                      "Number of publication: ${snapshot.data?.nPubblication}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(fontSize: 20))
+                                  : Container(),
+                            ])));
               } else if (snapshot.hasError) {
                 return Text("${snapshot.error}");
               }
