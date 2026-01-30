@@ -4,8 +4,6 @@ import 'package:zotero_app/auth/AuthPage.dart';
 import 'package:zotero_app/pages/InfoPage.dart';
 import 'package:zotero_app/pages/SettingsPage.dart';
 import 'package:zotero_app/theme/MyTheme.dart';
-import 'package:liquid_glass_ui_design/liquid_glass_ui.dart';
-
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import '../l10n/app_localizations.dart';
@@ -99,15 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
         bottomNavigationBar: BottomNavigationBar(
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: LiquidIcon(icon: Icons.home),
+              icon: Icon(Icons.home),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: LiquidIcon(icon: Icons.settings_applications),
+              icon: Icon(Icons.settings_applications),
               label: AppLocalizations.of(context)!.settings,
             ),
             BottomNavigationBarItem(
-              icon: LiquidIcon(icon: Icons.info),
+              icon: Icon(Icons.info),
               label: 'Info',
             )
           ],

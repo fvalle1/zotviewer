@@ -6,7 +6,6 @@ import '../l10n/app_localizations.dart';
 import 'AuthorHelper.dart';
 import 'package:liquid_glass_ui_design/liquid_glass_ui.dart';
 
-
 class PaperWidget extends StatelessWidget {
   final Paper? paper;
 
@@ -18,41 +17,101 @@ class PaperWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LiquidCard(
-      child: Column(
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => PaperPage(paper: paper!)));
+      },
+      child: LiquidCard(
+        borderRadius: 20,
+        padding: EdgeInsets.all(20),
+        child: Column(
           children: [
-            ElevatedButton(
-                child: Text(
-                  paper?.title ?? AppLocalizations.of(context)!.errorNoName,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                  maxLines: 3,
-                  softWrap: true,
+            Row(
+              children: [
+                Icon(
+                  Icons.article_outlined,
+                  size: 24,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => PaperPage(paper: paper!)));
-                  //Navigator.pop(context);
-                }),
+                SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    paper?.title ?? AppLocalizations.of(context)!.errorNoName,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                    maxLines: 3,
+                    softWrap: true,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 12),
             paper?.creators != null
-                ? Text(
-                    paper!.creators!
-                        .map<String>((creator) => parseCreator(creator))
-                        .toList()
-                        .sublist(0, paper!.creators!.length > 3 ? 3: paper!.creators!.length)
-                        .join(";"),
+                ? Row(
+                    children: [
+                      Icon(
+                        Icons.person_outline,
+                        size: 16,
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                      SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          paper!.creators!
+                              .map<String>((creator) => parseCreator(creator))
+                              .toList()
+                              .sublist(
+                                  0,
+                                  paper!.creators!.length > 3
+                                      ? 3
+                                      : paper!.creators!.length)
+                              .join("; "),
+                          style: TextStyle(
+                            fontSize: 14,
+                            color:
+                                Theme.of(context).textTheme.bodyMedium?.color,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
                   )
                 : Text("..."),
+            SizedBox(height: 8),
             GestureDetector(
               onTap: _launchURLdoi,
-              child: Text(paper?.doi ?? "...",
-                  style: TextStyle(fontStyle: FontStyle.italic)),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.link,
+                    size: 16,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      paper?.doi ?? "...",
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        color: Theme.of(context).colorScheme.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min),
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+        ),
+      ),
     );
   }
 }

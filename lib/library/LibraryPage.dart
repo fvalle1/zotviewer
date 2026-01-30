@@ -64,9 +64,13 @@ class _LibraryPageState extends State<LibraryPage> {
                       builder: (context, snapshot) {
                         if (snapshot.hasError) print(snapshot.error);
                         if (snapshot.hasData) {
-                          return Row(
-                            children: snapshot.data!,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          return SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: snapshot.data!,
+                              spacing: 5,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                            ),
                           );
                         } else {
                           return Center(child: CircularProgressIndicator());
